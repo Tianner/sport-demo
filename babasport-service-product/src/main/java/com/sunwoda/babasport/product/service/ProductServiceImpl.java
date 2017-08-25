@@ -8,7 +8,7 @@ import com.sunwoda.babasport.pojo.Sku;
 import com.sunwoda.babasport.pojo.SuperPojo;
 import com.sunwoda.babasport.product.mapper.ProductMapper;
 import com.sunwoda.babasport.product.mapper.SkuMapper;
-import com.sunwoda.babasport.service.ProductService;
+import com.sunwoda.babasport.cms.service.ProductService;
 import com.sunwoda.babasport.product.service.activemq.MyQueueSender;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.SolrServerException;

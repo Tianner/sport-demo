@@ -1,6 +1,6 @@
 package com.sunwoda.babasport.product.service;
 
-import com.sunwoda.babasport.service.JedisService;
+import com.sunwoda.babasport.cms.service.JedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

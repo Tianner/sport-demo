@@ -1,16 +1,12 @@
 package com.sunwoda.babasport.controller;
 
-import com.sunwoda.babasport.common.utils.Encoding;
-import com.sunwoda.babasport.common.utils.Page;
-import com.sunwoda.babasport.pojo.Brand;
-import com.sunwoda.babasport.service.BrandService;
+import com.sunwoda.babasport.cms.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by Administrator on 2017/8/14.

@@ -4,7 +4,7 @@ import com.sunwoda.babasport.common.fastDFS.FastDFSTools;
 import com.sunwoda.babasport.common.utils.Encoding;
 import com.sunwoda.babasport.common.utils.Page;
 import com.sunwoda.babasport.pojo.Brand;
-import com.sunwoda.babasport.service.BrandService;
+import com.sunwoda.babasport.cms.service.BrandService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

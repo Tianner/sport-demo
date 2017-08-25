@@ -6,9 +6,9 @@
     <!--<dubbo:registry address="192.168.57.104:2181" protocol="zookeeper"/>-->
     <dubbo:registry address="N/A"/>
     <dubbo:protocol name="dubbo" port="20880" host="127.0.0.1"/>
-    <dubbo:service interface="com.sunwoda.babasport.service.UserService" ref="userService"/>
-    <dubbo:service interface="com.sunwoda.babasport.service.BrandService" ref="brandService"/>
-    <dubbo:service interface="com.sunwoda.babasport.service.ProductService" ref="productService"/>
-    <dubbo:service interface="com.sunwoda.babasport.service.SkuService" ref="skuService"/>
-    <dubbo:service interface="com.sunwoda.babasport.service.JedisService" ref="jedisService"/>
+    <dubbo:service interface="com.sunwoda.babasport.cms.service.UserService" ref="userService"/>
+    <dubbo:service interface="com.sunwoda.babasport.cms.service.BrandService" ref="brandService"/>
+    <dubbo:service interface="com.sunwoda.babasport.cms.service.ProductService" ref="productService"/>
+    <dubbo:service interface="com.sunwoda.babasport.cms.service.SkuService" ref="skuService"/>
+    <dubbo:service interface="com.sunwoda.babasport.cms.service.JedisService" ref="jedisService"/>
 </beans>

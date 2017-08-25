@@ -6,5 +6,5 @@
     <dubbo:application name="babasport-solr"/>
     <dubbo:registry address="N/A" />
     <dubbo:protocol port="20881" name="dubbo" host="127.0.0.1"/>
-    <dubbo:service interface="com.sunwoda.babasport.service.SolrService" ref="solrService"/>
+    <dubbo:service interface="com.sunwoda.babasport.cms.service.SolrService" ref="solrService"/>
 </beans>

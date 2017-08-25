@@ -1,15 +1,13 @@
 package com.sunwoda.babasport.solr.service.activemq;
 
-import com.sunwoda.babasport.service.SolrService;
+import com.sunwoda.babasport.cms.service.SolrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import java.util.List;
 
 /**
  * 描述:
@@ -25,7 +23,7 @@ public class MyQueueReceiver implements MessageListener {
     @Override
     public void onMessage(Message message) {
         MapMessage mapMessage = (MapMessage) message;
-        try {
+       /* try {
             Integer isShow = (Integer)mapMessage.getObject("isShow");
             System.err.println("--123-"+isShow);
 
@@ -39,6 +37,6 @@ public class MyQueueReceiver implements MessageListener {
             this.solrService.addOrDelProductSolr(ids,isShow);
         } catch (JMSException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

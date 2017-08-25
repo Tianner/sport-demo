@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
    <bean id="jedis" class="redis.clients.jedis.Jedis">
-       <constructor-arg index="0" value="192.168.57.104" type="java.lang.String"/>
-       <constructor-arg index="1" value="6379"/>
+       <constructor-arg index="0" value="${redis.url}" type="java.lang.String"/>
+       <constructor-arg index="1" value="${redis.port}"/>
    </bean>
 </beans>

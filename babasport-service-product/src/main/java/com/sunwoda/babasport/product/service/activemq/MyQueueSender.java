@@ -20,8 +20,8 @@ import java.util.Map;
 public class MyQueueSender {
 
     @Autowired
-    @Qualifier("jmsQueueTemplate")
-    private JmsTemplate jmsQueueTemplate;
+    @Qualifier("jmsTopicTemplate")
+    private JmsTemplate jmsTopicTemplate;
 
     /**
      * 发送字符串消息到队列中
@@ -29,7 +29,7 @@ public class MyQueueSender {
      * @param message
      */
     public void sendStrMessage(String queueName,final String message){
-        this.jmsQueueTemplate.send(queueName, new MessageCreator() {
+        this.jmsTopicTemplate.send(queueName, new MessageCreator() {
             @Override
             public Message createMessage(Session session) throws JMSException {
                 return session.createTextMessage(message);
@@ -43,7 +43,7 @@ public class MyQueueSender {
      * @param mapMessage
      */
     public void sendMapMessage(String queueName,final Map<String,Object> mapMessage){
-        this.jmsQueueTemplate.send(queueName, new MessageCreator() {
+        this.jmsTopicTemplate.send(queueName, new MessageCreator() {
             @Override
             public Message createMessage(Session session) throws JMSException {
                 MapMessage message = session.createMapMessage();

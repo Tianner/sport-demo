@@ -3,12 +3,9 @@ package com.sunwoda.babasport.controller;
 import com.sunwoda.babasport.common.fastDFS.FastDFSTools;
 import com.sunwoda.babasport.common.utils.Encoding;
 import com.sunwoda.babasport.common.utils.Page;
-import com.sunwoda.babasport.pojo.Brand;
 import com.sunwoda.babasport.pojo.Product;
-import com.sunwoda.babasport.pojo.Sku;
-import com.sunwoda.babasport.service.JedisService;
-import com.sunwoda.babasport.service.ProductService;
-import com.sunwoda.babasport.service.SkuService;
+import com.sunwoda.babasport.cms.service.JedisService;
+import com.sunwoda.babasport.cms.service.ProductService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,11 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import redis.clients.jedis.Jedis;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**

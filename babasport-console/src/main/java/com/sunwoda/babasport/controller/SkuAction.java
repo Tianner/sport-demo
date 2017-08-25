@@ -1,8 +1,7 @@
 package com.sunwoda.babasport.controller;
 
-import com.sunwoda.babasport.pojo.Brand;
 import com.sunwoda.babasport.pojo.Sku;
-import com.sunwoda.babasport.service.SkuService;
+import com.sunwoda.babasport.cms.service.SkuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

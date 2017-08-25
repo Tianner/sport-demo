@@ -2,7 +2,7 @@ package com.sunwoda.babasport.product.service;
 
 import com.sunwoda.babasport.pojo.Buyer;
 import com.sunwoda.babasport.product.mapper.UserMapper;
-import com.sunwoda.babasport.service.UserService;
+import com.sunwoda.babasport.cms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

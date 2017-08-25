@@ -1,7 +1,7 @@
 package com.sunwoda.babasport.product.service;
 
 import com.sunwoda.babasport.pojo.Buyer;
-import com.sunwoda.babasport.service.UserService;
+import com.sunwoda.babasport.cms.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

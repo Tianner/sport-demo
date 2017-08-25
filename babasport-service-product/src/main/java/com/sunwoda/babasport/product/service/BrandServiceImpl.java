@@ -1,11 +1,10 @@
 package com.sunwoda.babasport.product.service;
 
-import com.github.abel533.entity.Example;
 import com.sunwoda.babasport.common.utils.Page;
 import com.sunwoda.babasport.common.utils.PageHelper;
 import com.sunwoda.babasport.pojo.Brand;
 import com.sunwoda.babasport.product.mapper.BrandMapper;
-import com.sunwoda.babasport.service.BrandService;
+import com.sunwoda.babasport.cms.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
