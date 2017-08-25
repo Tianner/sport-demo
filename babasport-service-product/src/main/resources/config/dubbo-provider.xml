@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="babasport-service-product" />
+    <!--<dubbo:registry address="192.168.57.104:2181" protocol="zookeeper"/>-->
+    <dubbo:registry address="N/A"/>
+    <dubbo:protocol name="dubbo" port="20880" host="127.0.0.1"/>
+    <dubbo:service interface="com.sunwoda.babasport.service.UserService" ref="userService"/>
+    <dubbo:service interface="com.sunwoda.babasport.service.BrandService" ref="brandService"/>
+    <dubbo:service interface="com.sunwoda.babasport.service.ProductService" ref="productService"/>
+    <dubbo:service interface="com.sunwoda.babasport.service.SkuService" ref="skuService"/>
+    <dubbo:service interface="com.sunwoda.babasport.service.JedisService" ref="jedisService"/>
+</beans>

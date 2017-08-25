@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- JMS ConnectionFactory to use local broker (the one with the bridge) -->
+    <bean id="localFactory"
+          class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="${mq.url}" />
+        <property name="userName" value="${mq.userName}"/>
+        <property name="password" value="${mq.password}"/>
+    </bean>
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+        <property name="connectionFactory" ref="localFactory"/>
+    </bean>
+
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="pooledConnectionFactory"/>
+    </bean>
+    <!--jsm提供的工具类，用于生产和消费-->
+    <bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--非pub型即是队列型-->
+        <property name="pubSubDomain" value="false"/>
+    </bean>
+    <bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--pub型是订阅型-->
+        <property name="pubSubDomain" value="true"/>
+    </bean>
+
+</beans>

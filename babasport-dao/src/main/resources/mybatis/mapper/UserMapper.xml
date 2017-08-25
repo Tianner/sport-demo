@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunwoda.babasport.product.mapper.UserMapper">
+    <insert id="add">
+       INSERT INTO `babasport`.`bbs_buyer` (
+	`id`,
+	`username`,
+	`password`,
+	`gender`,
+	`email`,
+	`real_name`,
+	`register_time`,
+	`province`,
+	`city`,
+	`town`,
+	`addr`,
+	`is_del`
+)
+VALUES
+	(
+		NULL,
+		#{username},
+		#{password},
+		#{gender},
+		#{email},
+		#{realName},
+		NOW(),
+		#{province},
+		#{city},
+		#{town},
+		#{addr},
+		${isDel}
+	);
+    </insert>
+</mapper>

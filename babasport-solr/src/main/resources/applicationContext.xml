@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--引入连接配置文件-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <array>
+                <value>classpath:mq.properties</value>
+                <value>classpath:jdbc.properties</value>
+                <value>classpath:solr.properties</value>
+            </array>
+        </property>
+    </bean>
+    <bean id = "solrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+        <constructor-arg index="0" value="${solr.url}" type="java.lang.String"/>
+    </bean>
+    <import resource="classpath:config/*.xml"/>
+</beans>

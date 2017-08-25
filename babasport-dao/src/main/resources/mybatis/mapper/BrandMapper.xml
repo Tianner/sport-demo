@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunwoda.babasport.product.mapper.BrandMapper">
+    <sql id="ipAddress">
+        CONCAT('http://192.168.57.104:8888/',img_url) img_url
+    </sql>
+    <!--根据Example样例查找品牌-->
+    <select id="findByExample" resultType="Brand" parameterType="Brand">
+        select
+          id,
+          name,
+          description,
+          <include refid="ipAddress"/>,
+          web_site,
+          sort,
+          is_display
+        from bbs_brand
+       <where>
+            <if test="isDisplay !=null">
+                is_display=#{isDisplay}
+            </if>
+        </where>
+        <choose>
+            <when test="name!=null and name.trim()==''">
+
+            </when>
+            <when test="name!=null and !name.startsWith('%') and !name.endsWith('%')">
+                and name like "%"#{name}"%"
+            </when>
+            <when test="name!=null and name.startsWith('%') and name.endsWith('%')">
+                and name like "%"#{name}"%"
+            </when>
+            <when test="name!=null and name.startsWith('%')">
+                and name like "%"#{name}
+            </when>
+            <when test="name!=null and name.endsWith('%')">
+                and name like #{name}"%"
+            </when>
+        </choose>
+    </select>
+    <select id="findBrandById" parameterType="java.lang.Long" resultType="Brand">
+        select  id,
+          name,
+          description,
+          <include refid="ipAddress"/>,
+          web_site,
+          sort,
+          is_display
+        from bbs_brand
+        where id = #{id}
+    </select>
+    <update id="update" parameterType="Brand">
+        update bbs_brand set
+          name = #{name},
+          description = #{description},
+          img_url = #{imgUrl},
+          web_site = #{webSite},
+          sort = #{sort},
+          is_display = #{isDisplay}
+        where id = #{id}
+    </update>
+    <!--根据id集合批量删除-->
+    <delete id="deleteBatch">
+        delete from bbs_brand where id in 
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            ${id}
+        </foreach>
+    </delete>
+    <!--根据id删除一条数据-->
+    <delete id="deleteById" >
+        delete from bbs_brand where id = #{id}
+    </delete>
+</mapper>

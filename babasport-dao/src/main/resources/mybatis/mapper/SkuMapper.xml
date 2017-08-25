@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunwoda.babasport.product.mapper.SkuMapper">
+
+	<select id="findSkuByProductId" resultType="Sku">
+		SELECT
+			sku.id,
+			sku.product_id,
+			CONCAT(sku.size,'-',color.name)  size,
+			sku.market_price,
+			sku.price,
+			sku.delive_fee,
+			sku.stock,
+			sku.upper_limit,
+			sku.create_time,
+			sku.color_id
+
+		FROM
+			bbs_sku sku
+		LEFT JOIN bbs_color color
+		on
+			sku.color_id = color.id
+		where sku.product_id = #{productId}
+
+	</select>
+	<select id="selectByProductIdAndPriceAsc" resultType="com.sunwoda.babasport.pojo.SuperPojo">
+		SELECT
+			sku.id,
+			sku.product_id,
+			sku.size,
+			sku.market_price,
+			sku.price,
+			sku.delive_fee,
+			sku.stock,
+			sku.upper_limit,
+			sku.create_time,
+			sku.color_id ,
+			color.name color_name
+		FROM
+			bbs_sku sku
+		LEFT JOIN bbs_color color
+		on
+			sku.color_id = color.id
+		where sku.product_id = #{productId}
+		order by sku.price asc
+	</select>
+</mapper>
